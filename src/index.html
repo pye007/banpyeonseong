@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>반편성 도우미</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="logo">반</div>
+    <div>
+      <h1>반편성 도우미</h1>
+      <div class="sub" id="subline"></div>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="roster"><span class="n">1</span>명단 올리기</button>
+    <button data-tab="rank"><span class="n">2</span>순위·특이사항</button>
+    <button data-tab="board"><span class="n">3</span>반 배정·조정</button>
+    <button data-tab="save"><span class="n">4</span>서식 저장</button>
+  </nav>
+  <div class="top-right">
+    <div class="dd">
+      <button class="primary" data-act="toggle-save-menu">💾 저장 ▾</button>
+      <div class="dd-menu" id="save-menu" hidden>
+        <div class="dd-h">한글 문서(HWPX) — 계획서 붙임 서식</div>
+        <button data-act="hwp-f1">【서식1】 반편성 기초자료 (이전반별)</button>
+        <button data-act="hwp-f2">【서식2】 반편성 내역 (진급반별)</button>
+        <button data-act="hwp-f3">【서식3】 반편성 현황 (학년)</button>
+        <button data-act="hwp-all">서식1·2·3 한 파일로</button>
+        <div class="dd-h">그 밖의 저장</div>
+        <button data-act="xlsx-result">반편성 결과 명단 (엑셀)</button>
+        <button data-act="work-save">작업 파일 저장 (이어서 하기용)</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="tab" id="tab-roster"></section>
+  <section class="tab" id="tab-rank"></section>
+  <section class="tab" id="tab-board"></section>
+  <section class="tab" id="tab-save"></section>
+</main>
+
+<input type="file" id="file-input" multiple accept=".xlsx,.xls,.csv,.json" hidden>
+<input type="file" id="work-input" accept=".json" hidden>
+<div id="modal-root"></div>
+<div id="toast"></div>
+
+<script src="lib/xlsx.full.min.js"></script>
+<script src="lib/jszip.min.js"></script>
+<script src="hwpx-template.js"></script>
+<script src="hwpx.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

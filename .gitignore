@@ -1,0 +1,6 @@
+# 더블클릭용 사본 (index.html 과 같은 내용)
+반편성 도우미.html
+test-output/
+node_modules/
+.claude/
+*.json.bak
