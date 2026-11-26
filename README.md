@@ -23,4 +23,15 @@
 - `node tools/dev-server.js` — 개발용 서버 (http://localhost:5178)
 - `node tools/make-template.js` — 한글 기본 서식에서 HWPX 뼈대(`src/hwpx-template.js`)를 다시 만듭니다.
 
+## 배포 주소
+
+- Cloudflare Pages: https://banpyeonseong.pages.dev/
+- GitHub Pages: https://pye007.github.io/banpyeonseong/
+
+고친 뒤 다시 배포하기:
+
+1. `node tools/build.js`
+2. GitHub Pages — 바뀐 `index.html`을 커밋해서 `main`에 올리면 반영됩니다.
+3. Cloudflare Pages — `index.html`을 `dist/`에 복사한 뒤 `npx wrangler pages deploy dist --project-name banpyeonseong --branch main`
+
 사용한 라이브러리: [SheetJS](https://sheetjs.com) (Apache-2.0), [JSZip](https://stuk.github.io/jszip/) (MIT)
